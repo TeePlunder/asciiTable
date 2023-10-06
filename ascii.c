@@ -11,16 +11,16 @@ int main() {
   for (i = 0; i < 128 / columnNumber; i++) {
     printf("\n| ");
     int dec = i;
-  int rotations = 0;
-    for (j = i; rotations < 4; j += 19) {
-      printf("%3d %2X ", j, dec);
-      if (isgraph(j))
-        printf("  %c  | ", j);
-      else
+    for (j = i; dec < 128; j += 19) {
+      printf("%3d %2X ", dec, dec);
+      if (isgraph(dec)) {
+        printf("  %c  | ", dec);
+      } else {
         printf("  .  | ");
+      }
       dec = dec + 32;
-      rotations++;
     }
   }
+  printf("%c", 35);
   return 0;
 }
