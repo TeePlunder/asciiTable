@@ -8,17 +8,18 @@ int main() {
     printf("|dec hex Char ");
   }
   printf("|\n");
-  int rotations = 0;
   for (i = 0; i < 128 / columnNumber; i++) {
     printf("\n| ");
     int dec = i;
-    for (j = i; j < 19 * columnNumber; j += 19) {
+  int rotations = 0;
+    for (j = i; rotations < 4; j += 19) {
       printf("%3d %2X ", j, dec);
       if (isgraph(j))
         printf("  %c  | ", j);
       else
         printf("  .  | ");
       dec = dec + 32;
+      rotations++;
     }
   }
   return 0;
