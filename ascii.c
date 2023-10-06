@@ -3,20 +3,23 @@
 
 int main() {
   int i, j;
-  for (i = 0; i < 4; i++) {
+  int columnNumber = 4;
+  for (i = 0; i < columnNumber; i++) {
     printf("|dec hex Char ");
   }
   printf("|\n");
-  for (i = 0; i < 128 / 4; i++) {
+  int rotations = 0;
+  for (i = 0; i < 128 / columnNumber; i++) {
     printf("\n| ");
-    for (j = 0; j < 128; j += 128 / 4) {
-      printf("%3d %2X ", i, i);
+    int dec = i;
+    for (j = i; j < 19 * columnNumber; j += 19) {
+      printf("%3d %2X ", j, dec);
       if (isgraph(j))
         printf("  %c  | ", j);
       else
         printf("  .  | ");
+      dec = dec + 32;
     }
   }
   return 0;
 }
-
