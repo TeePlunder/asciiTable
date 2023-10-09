@@ -13,15 +13,14 @@ int main() {
   printf("|\n");
   for (i = 0; i < 128 / columnNumber; i++) {
     printf("\n| ");
-    int dec = i;
-    for (j = i; dec < 128; j += 19) {
+    for (j = 0; j < 128; j += 128 / columnNumber) {
+      int dec = i + j;
       printf("%3d %2X ", dec, dec);
       if (isgraph(dec)) {
         printf("  %c  | ", dec);
       } else {
         printf("  .  | ");
       }
-      dec = dec + 32;
     }
   }
   printf("%c", 35);
