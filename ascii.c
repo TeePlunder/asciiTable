@@ -1,3 +1,6 @@
+// Leon Bergmann
+// 23/041/61
+
 #include <ctype.h>
 #include <stdio.h>
 
